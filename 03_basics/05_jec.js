@@ -1,7 +1,7 @@
 //NOTE:js is single threaded,everything in js is a Process.
 
 //JAVASCRIPT EXECUTION CONTEXT
-
+//
 //jec refers to how our javascript file is gonna run.
 
 //Whenever we create any js file, global execution context is created by default.This global execution context (gec) is referred using "this" keyword.
