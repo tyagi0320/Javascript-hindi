@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!--
+//DIAGRAM
+Window->document->html (1.head 2.body)
+head->title->text node
+head->metanode->attribute
+body->div->attributes(h1,p)
+-->
+
+<!--  
+=>title.innerText
+'DOM seekho with chai'
+=>title.textContent
+'DOM seekho with chaitest text'
+=>title.innerHTML
+'DOM seekho with chai<span style="display:none">test text</span>'
+-->
+
+<!--
+    =>document.querySelector('h2')
+    =>document.querySelector('#title')
+    =>document.querySelector('.heading')
+    =>document.querySelector('input[type="password"]')
+    =>document.querySelector('p:first-child')
+    =>const myul=document.querySelector('ul')
+    =>myul.querySelector('li')
+    => const turngreen= myul.querySelector('li')
+    =>turngreen.style.backgroundColor="green"
+    =>turngreen.style.padding="10px"
+
+-->
+
+<!--
+    =>document.querySelectorAll('li')
+    =>const tempList=document.querySelectorAll('li')
+    NOTE:  this tempList is a NodeList not array
+    =>tempLiList[0].style.color='green'
+    *Another example for "nodelist" concept
+    const myH1 = document.querySelectorAll('h1')
+    //the selected h1 title for dom would be of type NodeList rather than array.Hence, to use style we have to use command "myH1[0].style.color='green'" rather than using "myH1.style.color='green'"
+
+-->
+
+<!--
+    =>document.getElementsByClassName('list-item')
+    =>const tempClassList=document.getElementByClassName('list-item')
+    *for-each loop cannot be used for tempClassList because it is a nodelist
+    *To use map/for-each over nodelist you need to convert it into array
+    //conversion into array:
+    =>Array.from(tempClassList)
+    =>const myconvertedArray=Array.from(tempClassList)
+    =>myConvertedArray.foreach(function(lu){
+        li.style.color='orange'
+    })
+
+
+-->
