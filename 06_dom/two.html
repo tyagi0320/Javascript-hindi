@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[1].innerHTML);
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //      console.log(parent.children[i].innerHTML);
+        
+    // }
+    parent.children[1].style.color = "orange"
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+
+    console.log("NODES: ", parent.childNodes);
+</script>
+</html>
+
+
+<!--
+ //Selecting parent element:
+  const parent=document.querySelector('.parent')
+  console.log(parent);//returns the parent class
+  console.log(parent.children);//returns HTML collection.(NOTE:HTML collection shows array like property)
+  console.log(parent.children[1]);//returns the value from the HTML collection.
+  console.log(parent.children[1].innerHTML);
+
+  for(let i=0;i<parent.children.length;i++){
+    console.log(parent.children[i].innerHTML);
+  }
+
+  //styling the children
+  parent.children[1].style.color="orange"
+
+  //some new properties.
+  //parent->child
+  1.console.log(parent.firstELEMENT.Child);//returns the first child element of the parent element.
+  2.console.log(parent.lastELEMENT.Child)
+  //child->parent
+  1.const dayOne=document.querySelector('.day')
+  console.log(dayOne);
+  console.log(dayOne.parentElement);
+  //child->child
+  console.log(dayOne.nextElementSibling);
+
+  //NOTE: DOM is a tree structure.Let us study more about nodelist by following command
+  console.log("NODES: ",parent.childNodes);
+  output: 11 nodes: 1 comment+4 days + 6 line breakings.
+  *This command will not return mon,tue,wed,thurs. It returns the all nodes from the complex tree structure of your nodelist called "parent".These all of the nodes consists of days as well as the linebreaking.
+   <div class="parent"> 1
+        #comment1 2
+        <div class="day">Monday</div> 3
+        <div class="day">Tuesday</div> 4
+        <div class="day">Wednesday</div> 5
+        <div class="day">Thursday</div> 6
+    </div>
+
+-->
