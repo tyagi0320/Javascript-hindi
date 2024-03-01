@@ -1,0 +1,36 @@
+<!--
+
+    //CREATING OUR OWN ELEMENTS (NODELISTS):
+    const div=document.createElement('h1')
+     console.log(h1)
+     output: <h1></h1>
+
+     const div=document.createElement('div')
+     console.log(div)
+     output: <div></div>
+     //adding properties in our element
+    
+     div.className="main"
+     div.id= Math.round(Math.random()*10+1)
+     //inbuit-feature to set attributes-
+     div.setAttribute("title","Generated title")
+     div.style.backgroundColor="green"
+     div.style.padding="12px"
+
+     //Some optimisation
+      1.div.innerText="Chai Aur Code" : writing some text in our element.
+      The method of div.innertext calls the reference of predefined set first and then overwrites the predefined set to write text value creating an extra round.
+      However if we use "document.createTextNode" , we can directly write the text in the predefined set saving time in generating an extra round.
+      2.optimal way
+      const addtext = document.createTextNode("Chai Aur Code")
+      div.appendChild(addText)
+
+
+     NOTE: So far what we have done is ,we've created element on the memory (console) but we have not yet attached it with page.To see the created element on the page we certainly need to do the attachment.
+
+     //attachment
+     doument.body.appendChild(div)
+     
+
+   
+-->
