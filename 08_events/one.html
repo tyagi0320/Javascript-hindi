@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<!--
+   1.In Js Events run sequentially.However there do exists some exceptions(browser events).
+   //Method-1 to apply an event:
+   <li><img src="abcd" alt="" onclick="alert('owl clicked')"</li>
+    *This method is considered very immature because it would pose problem when issue of scalability arises.
+
+   //Method-2 to apply an event:
+   document.getElementById('owl').onclick=function(){
+    alert("owl clicked")
+   }
+   *This is still not fully optimised method because using .onclick gives us lesser features.
+
+   //Method-3 to apply an event:
+   *addEventListener: It includes lots of events related to keyboard and mouse.
+   document.getElementById('owl').addEventListener('click',function(){
+    alert("owl clicked")
+   },false)
+   *The third parameter used is "false" default. It is used to
+   
+   //Method-4 to apply an event:
+   *use of attachEvent(). This was used mostly for internet explorer.
+-->
