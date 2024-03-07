@@ -37,4 +37,96 @@
    
    //Method-4 to apply an event:
    *use of attachEvent(). This was used mostly for internet explorer.
+
+   //Method-5 Use of Jquery:
+   *use of .on('click')
+-->
+
+<!--
+    //EVENT OBJECT:
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log(e);//Printing it we get to see that the object is a pointer type object and includes various events in it like "button","height","clientX" etc. Mostly these events are browser and environment events. This functionality helps us to configure following properties (asked in interviews) -
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    })
+    *Use of "e" in function is what we are referring as event object. console.log(e) prints the event object on the console.
+-->
+
+<!--
+    //EVENT PROPAGATION(false,true): Two contexts event bubbling(false) and event capturing(true).
+    
+//false:
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside ul")
+    },false)
+
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log("owl clicked")
+    },false)
+
+    On clicking image of owl, our console would print two values in bubbling out fashion. Firstly 1.Owl clicked then 2.clicked inside ul
+
+    Bubble out: Inside to outside print.Order of script tracking is: Inner element(image)->li->ul in our case.
+
+//true:
+     document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside ul")
+    },true)
+
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log("owl clicked")
+    },true)
+
+    On clicking image of owl, our console would print two values in event capturing fashion. Firstly 1.clicked inside ul then 2.Owl clicked
+
+    Event capturing: Outside to Inside print.Order of script tracking is: ul->li-> Inner element(image) in this case.
+-->
+<!--
+    //STOP PROPAGATION:
+    It prevents bubbling.It doesnot allow script tracking.
+
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log("owl clicked")
+        e.stopPropagation()
+    },false)
+-->
+<!--
+    //PREVENT DEFAULT: Prevents event from taking place.
+
+    document.getElementById('google').addEventListener('click',fucntion(e){
+        e.preventDefault();
+        console.log("google clicked");
+    },false)
+-->
+<!--
+    //WE WANT WHEN WE CLICK ON A IMAGE IT DISAPPEARS.
+
+    document.querySelector('#images').addEventListener('click',fucniton(e){
+        console.log(e.target.parentNode);
+        let removeIt=e.target.parentNode
+        removeIt.remove()
+    })
+
+    NOTE: Clicking on a li(bulletein) removes everything.WHY?
+    ANS. This is because it is a list item. Parent of list item is ul. And what we are removing is parent only. Hence, ul gets removed all together making everything disappear.
+    *Clicking on image was removing the li-item since li is the parent of inner element(image) in our case.
+-->
+
+<!--
+    //WE DONT WANT TO REMOVE LIST WHEN LI GETS CLICKED WHILE REMOVING IMAGES,ONLY IMAGES SHALL BE REMOVED WHEN CLICKED ON THEM. ON CLICKING LI NOTHING SHALL DISAPPEAR:
+
+    *we'll do some strict checks:
+     document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+    
 -->
