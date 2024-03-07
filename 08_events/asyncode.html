@@ -1,0 +1,43 @@
+<!--
+    //JAVASCRIPT:
+    1.It is synchronous[1 piece of code will be executed first, then other code and then other code.]
+    2.It is a single threaded language[1 task at a time]
+
+    *The above two behaviours are of a default javascript.
+
+    //Execution context:
+    *Execution of one line of code at a time.
+    *Each operation waits for the last one to complete before executing.
+
+    //BLOCKING CODE VS NON-BLOCKING CODE:
+
+    //BLOCKING CODE:
+    *Blocks the flow of a program.
+    *Reads the file synchronously.
+    *We need to wait for the notification(notification that required data in a file has been read successfully!) before a task is completed.
+
+    //NON-BLOCKING CODE:
+    *Doesnot blocks the execution.
+    *Reads the file Asynchronously.
+    *We needn't wait for notification.We can continue with our task.As soon as file's data is read we would get notified, we need not wait specially for some notification.
+
+    NOTE: It is nothing like synchronous code is best or asynchronous. We use both of these as per our use cases.
+-->
+
+<!--
+   WORKING OF PROGRAM:
+
+   1.JS ENGINE:
+   1.Memory heap
+   2.Call stack
+
+   2.WEB-API(inside browser)/NODE(environment):
+   1.DOM API[Not in case of node although]
+   2.Set timeout
+   3.Set interval
+   4.fetch()- consists PROMISES and HIGH PRIORITY QUEUE/PROMISE QUEUE [More priority over set timeout and set interval]
+   5.Register CALL BACK
+
+   3.TASK QUEUE- It makes the js fast, synchronous and asynchronous.
+
+-->
